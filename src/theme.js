@@ -3,10 +3,10 @@ const theme = createMuiTheme({
  
   palette: {
     primary: {
-      main: "#3f51b5"
+      main: "#3949ab"
     },
     secondary: {
-      main: "#0f0"
+      main: "#3f51b5"
     }
   },
   typography: {
@@ -17,7 +17,7 @@ const theme = createMuiTheme({
     }
   },
   shape: {
-    borderRadius: 30
+    borderRadius: 10
   },
   spacing: 8,
   overrides: {
@@ -37,7 +37,7 @@ const theme = createMuiTheme({
     MuiButton: {
       root: {
         textTransform: "none",
-        padding: "20px"
+        padding: "10px"
       },
       fullWidth: {
         maxWidth: "300px"
