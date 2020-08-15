@@ -1,10 +1,25 @@
 import React, { Component, Fragment } from 'react'
-import { CssBaseline ,ThemeProvider} from '@material-ui/core'
-import { Header, Footer } from './Components/Layouts'
-import Exercises from './Components/Contents';
-import { muscles, exercises } from './store.js';
+import { CssBaseline ,ThemeProvider, makeStyles} from '@material-ui/core'
+import { Header, Footer, SideMenu } from '../Components/Layouts'
+import Exercises from '../Components/Contents';
+import { muscles, exercises } from '../store.js';
 
-import theme from './theme';
+import theme from '../theme';
+import Contents from '../Components/Contents';
+
+const useStyles =makeStyles( {
+  appMain: {
+      display: 'flex',
+      flexDirection: 'column',
+      position: 'absolute',
+      left: '0px',
+      width: '250px',
+      height: '100%',
+      backgroundColor: '#3f51b5'
+    
+  }
+}
+);
 export default class extends Component {
   state = {
     exercises,
@@ -71,30 +86,31 @@ export default class extends Component {
 
   render() {
     const exercises = this.getExercisesByMuscles(),
-      { category, exercise, editMode } = this.state
-
+      { category, exercise, editMode } = this.state;
+   
     return <Fragment>
       <ThemeProvider theme={theme}>
 
       <CssBaseline />
-      
-      <Header
-        muscles={muscles}
-        onExerciseCreate={this.handleExerciseCreate}
-      />
+      <SideMenu/>
+      <div >
+        <Header
+          muscles={muscles}
+          onExerciseCreate={this.handleExerciseCreate}
+        />
 
-      <Exercises
-        exercise={exercise}
-        category={category}
-        exercises={exercises}
-        editMode={editMode}
-        muscles={muscles}
-        onSelect={this.handleExerciseSelect}
-        onDelete={this.handleExerciseDelete}
-        onSelectEdit={this.handleExerciseSelectEdit}
-        onEdit={this.handleExerciseEdit}
-      />
-
+        <Contents
+          exercise={exercise}
+          category={category}
+          exercises={exercises}
+          editMode={editMode}
+          muscles={muscles}
+          onSelect={this.handleExerciseSelect}
+          onDelete={this.handleExerciseDelete}
+          onSelectEdit={this.handleExerciseSelectEdit}
+          onEdit={this.handleExerciseEdit}
+        />
+      </div>
       <Footer
         category={category}
         muscles={muscles}

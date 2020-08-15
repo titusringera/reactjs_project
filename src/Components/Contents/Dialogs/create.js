@@ -1,7 +1,8 @@
 import React, { Component,Fragment } from 'react'
 import {Dialog,Button,
-    DialogActions,DialogContent,DialogContentText,DialogTitle,
+    DialogActions,DialogContent,DialogContentText,DialogTitle,IconButton, Badge,
     TextField} from '@material-ui/core'
+    import PersonAdd from '@material-ui/icons/PersonAdd';
     import Fab from '@material-ui/core/Fab'
     import AddIcon from '@material-ui/icons/Add';
 export default class extends Component {
@@ -18,10 +19,13 @@ export default class extends Component {
         const{open}=this.state
         return(
             <Fragment>
-              
-                 <Fab variant="fab" onClick={this.handleToggle} mini aria-label="add">
-        <AddIcon />
-      </Fab>
+               <IconButton >
+                              <Badge  color="secondary">
+                                  <PersonAdd color="inherit" onClick={this.handleToggle} mini fontSize="small" />
+                              </Badge>
+                          </IconButton>
+               
+     
                 
 
 <Dialog open={open} onClose={this.handleToggle} >

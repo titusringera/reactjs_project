@@ -3,9 +3,12 @@ import { Grid, Paper, Typography, List,ListItem, ListItemText,Card  } from '@mat
 //import { } from '@material-ui/List'
 
 const styles = {
- 
+  container :{
+      paddingLeft: '250px'
+  },
   Paper: {
     padding: 20,
+    
     marginTop: 10,
     marginBottom: 10,
     height: 500,
@@ -42,7 +45,7 @@ export default ({
     description = 'Please select an exercise from the list on the left.'
   }
  }) =>
-  <Grid container>
+  <Grid container style={styles.container}>
     <Grid item sm>
       <Paper style={styles.Paper}>
         {exercises.map(([group, exercises]) =>

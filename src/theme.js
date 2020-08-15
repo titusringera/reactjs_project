@@ -6,9 +6,15 @@ const theme = createMuiTheme({
       main: "#3949ab"
     },
     secondary: {
-      main: "#3f51b5"
+      main: "#3f51b5",
+      color: 'white',
+    },
+    inherit: {
+      main: "#ffffff",
+     
     }
   },
+ 
   typography: {
     fontFamily: "Comic Sans MS",
     body2: {
