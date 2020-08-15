@@ -100,6 +100,7 @@ export default class extends Component {
         />
 
         <Contents
+        
           exercise={exercise}
           category={category}
           exercises={exercises}

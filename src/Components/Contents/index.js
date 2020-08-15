@@ -29,7 +29,7 @@ const styles = {
       },
     marginTop: 10,
     marginBottom: 10,
-    height: 500,
+    height: 600,
  
     overflowY: 'auto'
   }
@@ -46,7 +46,7 @@ export default ({
   }
  }) =>
   <Grid container style={styles.container}>
-    <Grid item sm>
+    {/* <Grid item sm>
       <Paper style={styles.Paper}>
         {exercises.map(([group, exercises]) =>
           !category || category === group
@@ -72,7 +72,7 @@ export default ({
             : null
         )}
       </Paper>
-    </Grid>
+    </Grid> */}
     <Grid item sm>
       <Card style={styles.Card}>
         <Typography
