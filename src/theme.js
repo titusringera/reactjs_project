@@ -7,7 +7,7 @@ const theme = createMuiTheme({
     },
     secondary: {
       main: "#3f51b5",
-      color: 'white',
+      
     },
     inherit: {
       main: "#ffffff",

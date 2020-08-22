@@ -1,5 +1,6 @@
 import React from 'react'
 import { makeStyles, withStyles } from "@material-ui/core";
+import Navbar from '../Navbar';
 
 // withStyles & makeStyles
 
@@ -20,6 +21,7 @@ const SideMenu = (props) => {
     const { classes } = props;
     return (
         <div className={classes.sideMenu}>
+
 
         </div>
     )

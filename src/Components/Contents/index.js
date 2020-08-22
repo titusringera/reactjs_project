@@ -1,10 +1,11 @@
-import React, { Fragment } from 'react'
-import { Grid, Paper, Typography, List,ListItem, ListItemText,Card  } from '@material-ui/core'
+import React from 'react';
+import { Grid, Paper, Typography, List,ListItem, ListItemText,Card, colors, GridList  } from '@material-ui/core'
 //import { } from '@material-ui/List'
-
+import SideMenu from './SideMenu';
+import ContentArea from './ContentArea';
 const styles = {
-  container :{
-      paddingLeft: '250px'
+  Container :{
+    
   },
   Paper: {
     padding: 20,
@@ -17,7 +18,8 @@ const styles = {
   },
 
   Card: {
-
+    
+    paddingLeft: 258,
       _padding: 20,
       marginLeft: '-50%',
       get padding() {
@@ -45,47 +47,8 @@ export default ({
     description = 'Please select an exercise from the list on the left.'
   }
  }) =>
-  <Grid container style={styles.container}>
-    {/* <Grid item sm>
-      <Paper style={styles.Paper}>
-        {exercises.map(([group, exercises]) =>
-          !category || category === group
-            ? <Fragment key={group}>
-                <Typography
-                  variant="headline"
-                  style={{ textTransform: 'capitalize' }}
-                >
-                  {group}
-                </Typography>
-                <List component="ul">
-                  {exercises.map(({ id, title }) =>
-                    <ListItem
-                      key={id}
-                      button
-                      onClick={() => onSelect(id)}
-                    >
-                      <ListItemText primary={title} />
-                    </ListItem>
-                  )}
-                </List>
-              </Fragment>
-            : null
-        )}
-      </Paper>
-    </Grid> */}
-    <Grid item sm>
-      <Card style={styles.Card}>
-        <Typography
-          variant="display1"
-        >
-          {title}
-        </Typography>
-        <Typography
-          variant="subheading"
-          style={{marginTop: 20}}
-        >
-          {description}
-        </Typography>
-      </Card>
-    </Grid>
-  </Grid>
+ <Grid>
+<SideMenu/>
+ <ContentArea/>
+ </Grid>
+ 

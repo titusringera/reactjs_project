@@ -21,7 +21,7 @@ export default class extends Component {
             <Fragment>
                <IconButton >
                               <Badge  color="secondary">
-                                  <PersonAdd color="inherit" onClick={this.handleToggle} mini fontSize="small" />
+                                  <PersonAdd style={{color:'white'}} onClick={this.handleToggle} mini fontSize="small" />
                               </Badge>
                           </IconButton>
                

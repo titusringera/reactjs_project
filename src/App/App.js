@@ -1,122 +1,24 @@
-import React, { Component, Fragment } from 'react'
-import { CssBaseline ,ThemeProvider, makeStyles} from '@material-ui/core'
-import { Header, Footer, SideMenu } from '../Components/Layouts'
-import Exercises from '../Components/Contents';
-import { muscles, exercises } from '../store.js';
+import React from 'react';
+import './App.css';
+import Navbar from '../Components/Navbar';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import Home from '../Components/Contents/pages/Home';
+import Reports from '../Components/Contents/pages/Reports';
+import Products from '../Components/Contents/pages/Products';
 
-import theme from '../theme';
-import Contents from '../Components/Contents';
-
-const useStyles =makeStyles( {
-  appMain: {
-      display: 'flex',
-      flexDirection: 'column',
-      position: 'absolute',
-      left: '0px',
-      width: '250px',
-      height: '100%',
-      backgroundColor: '#3f51b5'
-    
-  }
+function App() {
+  return (
+    <>
+      <Router>
+        <Navbar />
+        <Switch>
+          <Route path='/' exact component={Home} />
+          <Route path='/reports' component={Reports} />
+          <Route path='/products' component={Products} />
+        </Switch>
+      </Router>
+    </>
+  );
 }
-);
-export default class extends Component {
-  state = {
-    exercises,
-    exercise: {}
-  }
 
-  getExercisesByMuscles() {
-    const initExercises = muscles.reduce((exercises, category) => ({
-      ...exercises,
-      [category]: []
-    }), {})
-
-    return Object.entries(
-      this.state.exercises.reduce((exercises, exercise) => {
-        const { muscles } = exercise
-
-        exercises[muscles] = [...exercises[muscles], exercise]
-
-        return exercises
-      }, initExercises)
-    )
-  }
-
-  handleCategorySelect = category =>
-    this.setState({
-      category
-    })
-
-  handleExerciseSelect = id =>
-    this.setState(({ exercises }) => ({
-      exercise: exercises.find(ex => ex.id === id),
-      editMode: false
-    }))
-
-  handleExerciseCreate = exercise =>
-    this.setState(({ exercises }) => ({
-      exercises: [
-        ...exercises,
-        exercise
-      ]
-    }))
-
-  handleExerciseDelete = id =>
-    this.setState(({ exercises, exercise, editMode }) => ({
-      exercises: exercises.filter(ex => ex.id !== id),
-      editMode: exercise.id === id ? false : editMode,
-      exercise: exercise.id === id ? {} : exercise
-    }))
-  
-  handleExerciseSelectEdit = id =>
-    this.setState(({ exercises }) => ({
-      exercise: exercises.find(ex => ex.id === id),
-      editMode: true
-    }))
-
-  handleExerciseEdit = exercise =>
-    this.setState(({ exercises }) => ({
-      exercises: [
-        ...exercises.filter(ex => ex.id !== exercise.id),
-        exercise
-      ],
-      exercise
-    }))
-
-  render() {
-    const exercises = this.getExercisesByMuscles(),
-      { category, exercise, editMode } = this.state;
-   
-    return <Fragment>
-      <ThemeProvider theme={theme}>
-
-      <CssBaseline />
-      <SideMenu/>
-      <div >
-        <Header
-          muscles={muscles}
-          onExerciseCreate={this.handleExerciseCreate}
-        />
-
-        <Contents
-        
-          exercise={exercise}
-          category={category}
-          exercises={exercises}
-          editMode={editMode}
-          muscles={muscles}
-          onSelect={this.handleExerciseSelect}
-          onDelete={this.handleExerciseDelete}
-          onSelectEdit={this.handleExerciseSelectEdit}
-          onEdit={this.handleExerciseEdit}
-        />
-      </div>
-      <Footer
-        category={category}
-        muscles={muscles}
-        onSelect={this.handleCategorySelect}
-      /></ThemeProvider>
-    </Fragment>
-  }
-}
+export default App;
