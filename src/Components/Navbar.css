@@ -23,6 +23,7 @@
   left: -100%;
   transition: 850ms;
 }
+ 
 
 .nav-menu.active {
   left: 0;
