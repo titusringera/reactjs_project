@@ -13,7 +13,7 @@
 }
 
 .nav-menu {
-  background-color: #0722be;
+  background-color: #3f51b5;/*0722be;*/
   width: 250px;
   height: 100vh;
   display: flex;
@@ -59,7 +59,7 @@
 }
 
 .navbar-toggle {
-  background-color: #0722be;
+  background-color: #3f51b5;
   width: 100%;
   height: 80px;
   display: flex;
