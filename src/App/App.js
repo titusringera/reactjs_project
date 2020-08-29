@@ -1,5 +1,6 @@
 import React from 'react';
 import './App.css';
+//import '../index.css';
 import SideMenu from '../Components/Contents/SideMenu';
 import { makeStyles, CssBaseline, createMuiTheme, ThemeProvider } from '@material-ui/core';
 import Header from '../Components/Layouts/Header';
