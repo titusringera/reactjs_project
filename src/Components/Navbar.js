@@ -20,10 +20,11 @@ const useStyles = makeStyles(theme => ({
     flexGrow: 1,
   },
   appMain: {
+    marginLeft:'250px',
     display: 'flex',
     flexDirection: 'column',
     position: 'absolute',
-    left: '0px',
+    left: '250px',
     width: '250px',
     height: '100%',
     backgroundColor: '#3f51b5'
@@ -33,12 +34,15 @@ const useStyles = makeStyles(theme => ({
     marginRight: theme.spacing(2),
   },
   title: {
-    display: 'none',
+    marginLeft:'10%',
+   // display: 'none',
+   width:'20em',
     [theme.breakpoints.up('sm')]: {
       display: 'block',
     },
   },
   searchInput: {
+    marginLeft:'10%',
       opacity: '1.6',
       padding: `5px ${theme.spacing(1)}px`,
       fontSize: '1.2rem',
@@ -64,9 +68,6 @@ const useStyles = makeStyles(theme => ({
     [theme.breakpoints.up('md')]: {
       display: 'none',
     },
-  },
-  appMain: {
-paddingLeft:'250px'
   }
   
 }))

@@ -4,7 +4,7 @@ import Navbar from '../Navbar';
 
 // withStyles & makeStyles
 
-const style = {
+const useStyles = {
     sideMenu: {
         display: 'flex',
         flexDirection: 'column',
@@ -21,10 +21,10 @@ const SideMenu = (props) => {
     const { classes } = props;
     return (
         <div className={classes.sideMenu}>
-
+    
 
         </div>
     )
 }
 
-export default withStyles(style)(SideMenu);
+export default withStyles(useStyles)(SideMenu);
