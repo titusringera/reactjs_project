@@ -5,7 +5,7 @@ import useTable from "../../../Layouts/useTable";
 
 import PageHeader from '../PageHeader';
 import PeopleOutlineTwoToneIcon from '@material-ui/icons/PeopleOutlineTwoTone';
-import { Search } from "@material-ui/icons";
+import SearchIcon from '@material-ui/icons/Search';
 import Controls from "../../../controls/Controls";
 import * as employeeService from "../../../services/employeeService";
 import AddIcon from '@material-ui/icons/Add';
@@ -111,12 +111,13 @@ export default function Employees() {
             <Paper className={classes.pageContent}>
 
                 <Toolbar>
+               
                     <Controls.Input
                         label="Search Employees"
                         className={classes.searchInput}
                         InputProps={{
                             startAdornment: (<InputAdornment position="start">
-                                <Search />
+                                <SearchIcon fontSize="small" />
                             </InputAdornment>)
                         }}
                         onChange={handleSearch}

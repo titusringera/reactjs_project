@@ -1,9 +1,9 @@
 import React from 'react';
-
+import Employees from '../../Contents/pages/Employees/Employees';
 function Home() {
   return (
     <div className='home'>
-      <h1>Home</h1>
+     <Employees/>
     </div>
   );
 }

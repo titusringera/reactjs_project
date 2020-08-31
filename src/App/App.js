@@ -1,10 +1,17 @@
 import React from 'react';
 import './App.css';
-//import '../index.css';
+import '../index.css';
 import SideMenu from '../Components/Contents/SideMenu';
 import { makeStyles, CssBaseline, createMuiTheme, ThemeProvider } from '@material-ui/core';
 import Header from '../Components/Layouts/Header';
 import Employees from '../Components/Contents/pages/Employees/Employees';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import Home from '../Components/Contents/pages/Home';
+import Reports from '../Components/Contents/pages/Reports';
+import Products from '../Components/Contents/pages/Products';
+import Messages from '../Components/Contents/pages/Messages';
+import Team from '../Components/Contents/pages/Team';
+import Support from '../Components/Contents/pages/Support';
 const theme = createMuiTheme({
   palette: {
     primary: {
@@ -28,7 +35,7 @@ const theme = createMuiTheme({
   },
   props:{
     MuiIconButton:{
-      disableRipple:true
+     // disableRipple:true
     }
   }
 })
@@ -50,12 +57,24 @@ function App() {
   const classes=useStyles();
   return (
     <ThemeProvider theme={theme}>
-      <SideMenu/>
-      <div className={classes.appMenu}>
+      <>
+      <Router>
+        <Header />
+        <Switch>
+          <Route path='/' exact component={Home} />
+          <Route path='/reports' component={Reports} />
+          <Route path='/products' component={Products} />
+          <Route path='/team' component={Team} />
+          <Route path='/messages' component={Messages} />
+          <Route path='/support' component={Support} />
+        </Switch>
+      </Router>
+    </>
+      {/* <div className={classes.appMenu}>
         <Header/>
        
         <Employees/>
-      </div>
+      </div> */}
     </ThemeProvider>
   );
 }
