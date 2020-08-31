@@ -9,7 +9,7 @@ import '../Navbar.css';
 import { AppBar, Toolbar, Grid, InputBase, IconButton, Badge, makeStyles } from '@material-ui/core'
 import NotificationsNoneIcon from '@material-ui/icons/NotificationsNone';
 import ChatBubbleOutlineIcon from '@material-ui/icons/ChatBubbleOutline';
-import PowerSettingsNewIcon from '@material-ui/icons/PowerSettingsNew';
+
 import SearchIcon from '@material-ui/icons/Search';
 import MenuItem from '@material-ui/core/MenuItem';
 import Menu from '@material-ui/core/Menu';
@@ -17,9 +17,12 @@ import MenuIcon from '@material-ui/icons/Menu';
 import AccountCircle from '@material-ui/icons/AccountCircle';
 import MailIcon from '@material-ui/icons/Mail';
 import NotificationsIcon from '@material-ui/icons/Notifications';
+import SettingsPowerIcon from '@material-ui/icons/SettingsPower';
 
 const useStyles = makeStyles(theme => ({
-
+  root: {
+    backgroundColor:  '#3f51b5'
+  },
     grow: {
       flexGrow: 1,
     },
@@ -62,6 +65,15 @@ const useStyles = makeStyles(theme => ({
         },
         borderRadius: 10
     },
+    mymenu: {borderRadius: 10,
+      padding: `0px ${theme.spacing(0.2)}px`,
+      color:'white',
+      '&:hover': {
+          backgroundColor: 'white',
+          color:'black'
+      },
+      
+  },
     sectionDesktop: {
       display: 'none',
       [theme.breakpoints.up('md')]: {
@@ -189,16 +201,17 @@ const useStyles = makeStyles(theme => ({
                     <Grid item>
                         <IconButton>
                             <Badge badgeContent={4} color="secondary">
-                                <NotificationsNoneIcon fontSize="small" />
+                                <NotificationsNoneIcon fontSize="large" className={classes.mymenu} />
                             </Badge>
                         </IconButton>
                         <IconButton>
                             <Badge badgeContent={3} color="primary">
-                                <ChatBubbleOutlineIcon fontSize="small" />
+                                <ChatBubbleOutlineIcon fontSize="large"className={classes.mymenu} />
                             </Badge>
                         </IconButton>
                         <IconButton>
-                            <PowerSettingsNewIcon fontSize="small" />
+                        
+                            <SettingsPowerIcon className={classes.mymenu} fontSize="large" color="action" />
                         </IconButton>
                     </Grid>
                 </Grid>
