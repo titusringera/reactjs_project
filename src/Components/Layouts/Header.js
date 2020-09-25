@@ -32,8 +32,8 @@ function Header() {
     <>
        <nav className='navbar'>
         <Link to='/' className='navbar-logo' onClick={closeMobileMenu}>
-          EPIC
          
+          <i class='fas fa-university	' />  &nbsp;&nbsp; SMART DEVELOPER
         </Link>
         <div className='menu-icon' onClick={handleClick}>
           <i className={click ? 'fas fa-times' : 'fas fa-bars'} />
@@ -76,10 +76,10 @@ function Header() {
               Contact Us
             </Link>
           </li>
-          <li>
-            <Link
-              to='/sign-up'
-              className='nav-links-mobile'
+          <li className='nav-item'>
+            <Link 
+              to='/register'
+              className='nav-links'
               onClick={closeMobileMenu}
             >
               Sign Up

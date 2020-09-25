@@ -78,7 +78,7 @@ export default function EmployeeForm() {
                         onChange={handleInputChange}
                         error={errors.email}
                     />
-                    <Controls.PhoneNumber
+                    <Controls.Input
                         label="Mobile"
                         name="mobile"
                         value={values.mobile}

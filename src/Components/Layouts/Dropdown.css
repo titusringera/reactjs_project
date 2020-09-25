@@ -15,12 +15,12 @@
 .dropdown-menu li:hover {
   background: #5cabff;
   opacity: 1;
-  transition: all 0.5s ease;
-  z-index: 1;
+  transition: 2s;
+  z-index: 999;
 }
 
 .dropdown-menu.clicked {
-  display: none;
+  display: '';
 }
 
 .dropdown-link {

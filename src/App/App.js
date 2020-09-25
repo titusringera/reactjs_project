@@ -12,6 +12,7 @@ import Reports from '../Components/pages/Reports';
 import Products from '../Components/pages/Products';
 import Messages from '../Components/pages/Messages';
 import Team from '../Components/pages/Team';
+import Register from '../Components/pages/Register';
 import Support from '../Components/pages/Support';
 import {muscles, exercises} from '../store';
 
@@ -68,6 +69,7 @@ function App() {
           <Route path='/team' component={Team} />
           <Route path='/messages' component={Messages} />
           <Route path='/support' component={Support} />
+          <Route path='/register' component={Register} />
         </Switch>
         
         <Footer

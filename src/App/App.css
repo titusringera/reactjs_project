@@ -51,7 +51,8 @@
 .products,
 .team,
 .messages,
-.support {
+.support,
+.register {
   display: flex;
   height: '90%';
   align-items: center;
