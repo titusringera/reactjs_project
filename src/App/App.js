@@ -1,17 +1,20 @@
 import React from 'react';
 import './App.css';
-import '../index.css';
-import SideMenu from '../Components/Contents/SideMenu';
-import { makeStyles, CssBaseline, createMuiTheme, ThemeProvider } from '@material-ui/core';
+
+import '../index.css'
+import { makeStyles, CssBaseline, createMuiTheme, ThemeProvider } 
+from '@material-ui/core';
 import Header from '../Components/Layouts/Header';
-import Employees from '../Components/Contents/pages/Employees/Employees';
+import Footer from '../Components/Layouts/Footer';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import Home from '../Components/Contents/pages/Home';
-import Reports from '../Components/Contents/pages/Reports';
-import Products from '../Components/Contents/pages/Products';
-import Messages from '../Components/Contents/pages/Messages';
-import Team from '../Components/Contents/pages/Team';
-import Support from '../Components/Contents/pages/Support';
+import Home from '../Components/pages/Home';
+import Reports from '../Components/pages/Reports';
+import Products from '../Components/pages/Products';
+import Messages from '../Components/pages/Messages';
+import Team from '../Components/pages/Team';
+import Support from '../Components/pages/Support';
+import {muscles, exercises} from '../store';
+
 const theme = createMuiTheme({
   palette: {
     primary: {
@@ -35,26 +38,24 @@ const theme = createMuiTheme({
   },
   props:{
     MuiIconButton:{
-     // disableRipple:true
+     disableRipple:true
     }
   }
 })
 const useStyles =makeStyles ({
-  appMenu: {
-      display: 'flex',
-      paddingLeft: '250px',
-      flexDirection: 'column',
-      position: 'absolute',
-      left: '0px',
-      width: '100%',
-      height: '50px',
-      backgroundColor: '#3f51b5'
-    
-  }
+ 
 })
 
 function App() {
   const classes=useStyles();
+  const states=[exercises];
+  const state = {
+    exercises,
+    exercise: {}
+  };
+
+ 
+
   return (
     <ThemeProvider theme={theme}>
       <>
@@ -68,6 +69,9 @@ function App() {
           <Route path='/messages' component={Messages} />
           <Route path='/support' component={Support} />
         </Switch>
+        
+        <Footer
+        muscles={muscles} />
       </Router>
     </>
       {/* <div className={classes.appMenu}>

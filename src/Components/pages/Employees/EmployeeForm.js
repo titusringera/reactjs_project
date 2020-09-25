@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import { Grid, } from '@material-ui/core';
-import Controls from "../../../controls/Controls";
-import { useForm, Form } from '../../../Layouts/useForm';
-import * as employeeService from "../../../services/employeeService";
+import Controls from "../../controls/Controls";
+import { useForm, Form } from '../../Layouts/useForm';
+import * as employeeService from "../../services/employeeService";
 
 
 const genderItems = [
@@ -78,7 +78,7 @@ export default function EmployeeForm() {
                         onChange={handleInputChange}
                         error={errors.email}
                     />
-                    <Controls.Input
+                    <Controls.PhoneNumber
                         label="Mobile"
                         name="mobile"
                         value={values.mobile}

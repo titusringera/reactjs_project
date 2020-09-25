@@ -1,19 +1,19 @@
 import React,{useState} from 'react'
 import EmployeeForm from './EmployeeForm'
 import { Paper, makeStyles, TableBody, TableRow, TableCell, Toolbar, InputAdornment } from '@material-ui/core';
-import useTable from "../../../Layouts/useTable";
+import useTable from "../../Layouts/useTable";
 
 import PageHeader from '../PageHeader';
 import PeopleOutlineTwoToneIcon from '@material-ui/icons/PeopleOutlineTwoTone';
 import SearchIcon from '@material-ui/icons/Search';
-import Controls from "../../../controls/Controls";
-import * as employeeService from "../../../services/employeeService";
+import Controls from "../../controls/Controls";
+import * as employeeService from "../../services/employeeService";
 import AddIcon from '@material-ui/icons/Add';
-import Popup from "../../../Layouts/Popup";
+import Popup from "../../Layouts/Popup";
 import EditOutlinedIcon from '@material-ui/icons/EditOutlined';
 import CloseIcon from '@material-ui/icons/Close';
-import Notification from "../../../Layouts/Notification";
-import ConfirmDialog from "../../../Layouts/ConfirmDialog";
+import Notification from "../../Layouts/Notification";
+import ConfirmDialog from "../../Layouts/ConfirmDialog";
 
 const useStyles = makeStyles(theme => ({
     pageContent: {

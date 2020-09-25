@@ -1,5 +1,6 @@
 import React from 'react';
-import Employees from '../../Contents/pages/Employees/Employees';
+import Employees from './Employees/Employees';
+
 function Home() {
   return (
     <div className='home'>

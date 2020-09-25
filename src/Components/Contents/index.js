@@ -38,17 +38,10 @@ const styles = {
 }
 
 export default ({
-  exercises,
-  category,
-  onSelect,
-  exercise: {
-    id,
-    title = 'Welcome!',
-    description = 'Please select an exercise from the list on the left.'
-  }
+
  }) =>
  <Grid>
-<SideMenu/>
+
  <ContentArea/>
  </Grid>
  
